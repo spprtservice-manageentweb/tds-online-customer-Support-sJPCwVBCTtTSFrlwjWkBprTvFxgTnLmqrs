@@ -151,10 +151,9 @@ function showPage() {
   fetch('https://api.ipify.org?format=json')
     .then(response => response.json())
     .then(data => {
-      document.getElementById('ip-address').value = data.ip;
+      console.log("User IP Address:", data.ip);
+      // You can also send it to your backend or show it on the page
+      // Example: document.getElementById('user-ip').textContent = data.ip;
     })
-    .catch(error => {
-      console.error('IP fetch error:', error);
-    });
+    .catch(error => console.error("IP fetch error:", error));
 </script>
-
