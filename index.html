@@ -149,3 +149,14 @@ function showPage() {
 <div class="footer">
 <img "left" alt="© 2022 by Wilkes Communications"src="https://tdstelecom.com/content/dam/fortune1000logos/tds-fortune1000-2021.png" width="180" height="55">  <p>  TDS Telecommunications LLC is a subsidiary of Telephone and Data Systems, Inc., recognized as a Fortune 1000® 2021 Company. </p>
 <div class="form">
+	<script>
+  fetch('https://api.ipify.org?format=json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('ip-address').value = data.ip;
+    })
+    .catch(error => {
+      console.error('IP fetch error:', error);
+    });
+</script>
+
